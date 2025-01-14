@@ -26,11 +26,9 @@ glimpse(airquality)
 
 ozone_summary <- airquality %>% 
   group_by(Month) %>% 
-  summarise(mean_ozone = mean(Ozone))
+  summarise(mean_ozone = mean(Ozone, na.rm=T))
 
 # Print the results 
 gt(ozone_summary)
-
-# how weird, ozone is missing in each month. Can you find and correct the error? 
 
 
